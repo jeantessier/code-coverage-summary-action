@@ -2,8 +2,6 @@
 
 require 'nokogiri'
 
-JACOCO_REPORT = "code-coverage-report/build/reports/jacoco/testCodeCoverageReport/testCodeCoverageReport.xml"
-
 def generate_report(out)
   path_prefix = if ENV.has_key?('GITHUB_WORKSPACE')
                   ENV['GITHUB_WORKSPACE'] + "/"
