@@ -2,10 +2,10 @@
 # Based on the official Ruby image: https://hub.docker.com/_/ruby
 #
 # To build:
-#     $ docker build . --tag jeantessier/code-coverage-summary-action:1.0.0 --tag jeantessier/code-coverage-summary-action:latest
+#     $ docker build . --tag jeantessier/code-coverage-summary-action:1.0.1 --tag jeantessier/code-coverage-summary-action:latest
 #
 # To upload to hub.docker.com:
-#     $ docker push jeantessier/code-coverage-summary-action:1.0.0
+#     $ docker push jeantessier/code-coverage-summary-action:1.0.1
 #     $ docker push jeantessier/code-coverage-summary-action:latest
 #
 
