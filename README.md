@@ -38,7 +38,7 @@ It will produce a summary table like the following.
 
 | Package                                  | Type        | Coverage | Covered | Total | Missed  |
 |------------------------------------------|-------------|:--------:|:-------:|:-----:|:-------:|
-| ** **                                    |             |          |         |       |         |
+| **&nbsp;**                               |             |          |         |       |         |
 |                                          | instruction |    0%    |    0    |  73   |  _73_   |
 |                                          | line        |    0%    |    0    |  25   |  _25_   |
 |                                          | complexity  |    0%    |    0    |  21   |  _21_   |
