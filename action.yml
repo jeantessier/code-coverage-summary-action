@@ -1,0 +1,10 @@
+name: Code Coverage Summary Action
+description: A GitHub Action to summarize JaCoCo code coverage in a Gradle project
+
+branding:
+  icon: align-left
+  color: green
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
