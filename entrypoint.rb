@@ -26,14 +26,14 @@ def generate_report(out)
            .each {|package_node| print_section out, package_node[:name], package_node}
 
         doc.xpath("report")
-           .each {|report_node| print_section out, "total", report_node}
+           .each {|report_node| print_section out, "_total_", report_node}
 
         out.puts
       end
 end
 
 def print_section(out, name, node)
-  out.puts "| **#{name.empty? ? " " : name}** | | | | | |"
+  out.puts "| **#{name.empty? ? "_default_" : name.gsub("/", ".")}** | | | | | |"
   node.xpath("counter").each {|counter_node| print_counter out, counter_node}
   out.puts "| | | | | | |"
 end

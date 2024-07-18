@@ -38,14 +38,14 @@ It will produce a summary table like the following.
 
 | Package                                  | Type        | Coverage | Covered | Total | Missed  |
 |------------------------------------------|-------------|:--------:|:-------:|:-----:|:-------:|
-| **&nbsp;**                               |             |          |         |       |         |
+| **_default_**                            |             |          |         |       |         |
 |                                          | instruction |    0%    |    0    |  73   |  _73_   |
 |                                          | line        |    0%    |    0    |  25   |  _25_   |
 |                                          | complexity  |    0%    |    0    |  21   |  _21_   |
 |                                          | method      |    0%    |    0    |  21   |  _21_   |
 |                                          | class       |    0%    |    0    |  10   |  _10_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/classreader**          |             |          |         |       |         |
+| **com.jeantessier.classreader**          |             |          |         |       |         |
 |                                          | instruction |   68%    |  9768   | 14252 | _4484_  |
 |                                          | branch      |   70%    |   495   |  707  |  _212_  |
 |                                          | line        |   68%    |  2186   | 3206  | _1020_  |
@@ -53,7 +53,7 @@ It will produce a summary table like the following.
 |                                          | method      |   69%    |   622   |  899  |  _277_  |
 |                                          | class       |   93%    |   61    |  65   |   _4_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/classreader/impl**     |             |          |         |       |         |
+| **com.jeantessier.classreader.impl**     |             |          |         |       |         |
 |                                          | instruction |   79%    |  11407  | 14301 | _2894_  |
 |                                          | branch      |   55%    |   381   |  684  |  _303_  |
 |                                          | line        |   77%    |  2485   | 3187  |  _702_  |
@@ -61,7 +61,7 @@ It will produce a summary table like the following.
 |                                          | method      |   76%    |   880   | 1151  |  _271_  |
 |                                          | class       |   90%    |   205   |  226  |  _21_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/commandline**          |             |          |         |       |         |
+| **com.jeantessier.commandline**          |             |          |         |       |         |
 |                                          | instruction |   82%    |  1304   | 1572  |  _268_  |
 |                                          | branch      |   79%    |   54    |  68   |  _14_   |
 |                                          | line        |   84%    |   331   |  393  |  _62_   |
@@ -69,7 +69,7 @@ It will produce a summary table like the following.
 |                                          | method      |   81%    |   137   |  168  |  _31_   |
 |                                          | class       |   100%   |   18    |  18   |   _0_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/dependency**           |             |          |         |       |         |
+| **com.jeantessier.dependency**           |             |          |         |       |         |
 |                                          | instruction |   84%    |  7486   | 8869  | _1383_  |
 |                                          | branch      |   75%    |   487   |  645  |  _158_  |
 |                                          | line        |   85%    |  1768   | 2079  |  _311_  |
@@ -77,7 +77,7 @@ It will produce a summary table like the following.
 |                                          | method      |   81%    |   582   |  717  |  _135_  |
 |                                          | class       |   96%    |   60    |  62   |   _2_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/dependencyfinder**     |             |          |         |       |         |
+| **com.jeantessier.dependencyfinder**     |             |          |         |       |         |
 |                                          | instruction |   41%    |   187   |  447  |  _260_  |
 |                                          | branch      |   34%    |   11    |  32   |  _21_   |
 |                                          | line        |   42%    |   56    |  131  |  _75_   |
@@ -85,7 +85,7 @@ It will produce a summary table like the following.
 |                                          | method      |   27%    |   14    |  51   |  _37_   |
 |                                          | class       |   75%    |    3    |   4   |   _1_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/dependencyfinder/ant** |             |          |         |       |         |
+| **com.jeantessier.dependencyfinder.ant** |             |          |         |       |         |
 |                                          | instruction |    8%    |   559   | 6238  | _5679_  |
 |                                          | branch      |   15%    |   68    |  451  |  _383_  |
 |                                          | line        |    9%    |   171   | 1725  | _1554_  |
@@ -93,7 +93,7 @@ It will produce a summary table like the following.
 |                                          | method      |   11%    |   61    |  537  |  _476_  |
 |                                          | class       |   23%    |    3    |  13   |  _10_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/dependencyfinder/cli** |             |          |         |       |         |
+| **com.jeantessier.dependencyfinder.cli** |             |          |         |       |         |
 |                                          | instruction |   36%    |  2344   | 6425  | _4081_  |
 |                                          | branch      |   29%    |   112   |  377  |  _265_  |
 |                                          | line        |   39%    |   521   | 1320  |  _799_  |
@@ -101,7 +101,7 @@ It will produce a summary table like the following.
 |                                          | method      |   47%    |   123   |  261  |  _138_  |
 |                                          | class       |   92%    |   24    |  26   |   _2_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/dependencyfinder/gui** |             |          |         |       |         |
+| **com.jeantessier.dependencyfinder.gui** |             |          |         |       |         |
 |                                          | instruction |    0%    |    0    | 7143  | _7143_  |
 |                                          | branch      |    0%    |    0    |  147  |  _147_  |
 |                                          | line        |    0%    |    0    | 1723  | _1723_  |
@@ -109,7 +109,7 @@ It will produce a summary table like the following.
 |                                          | method      |    0%    |    0    |  212  |  _212_  |
 |                                          | class       |    0%    |    0    |  30   |  _30_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/diff**                 |             |          |         |       |         |
+| **com.jeantessier.diff**                 |             |          |         |       |         |
 |                                          | instruction |   90%    |  5452   | 6013  |  _561_  |
 |                                          | branch      |   84%    |   607   |  722  |  _115_  |
 |                                          | line        |   90%    |  1104   | 1216  |  _112_  |
@@ -117,7 +117,7 @@ It will produce a summary table like the following.
 |                                          | method      |   79%    |   232   |  292  |  _60_   |
 |                                          | class       |   96%    |   25    |  26   |   _1_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/metrics**              |             |          |         |       |         |
+| **com.jeantessier.metrics**              |             |          |         |       |         |
 |                                          | instruction |   89%    |  9621   | 10739 | _1118_  |
 |                                          | branch      |   81%    |   608   |  743  |  _135_  |
 |                                          | line        |   90%    |  2062   | 2282  |  _220_  |
@@ -125,7 +125,7 @@ It will produce a summary table like the following.
 |                                          | method      |   80%    |   459   |  567  |  _108_  |
 |                                          | class       |   96%    |   32    |  33   |   _1_   |
 |                                          |             |          |         |       |         |
-| **com/jeantessier/text**                 |             |          |         |       |         |
+| **com.jeantessier.text**                 |             |          |         |       |         |
 |                                          | instruction |   95%    |   550   |  573  |  _23_   |
 |                                          | branch      |   89%    |   41    |  46   |   _5_   |
 |                                          | line        |   97%    |   135   |  139  |   _4_   |
@@ -155,7 +155,7 @@ It will produce a summary table like the following.
 |                                          | method      |    0%    |    0    |  11   |  _11_   |
 |                                          | class       |    0%    |    0    |   5   |   _5_   |
 |                                          |             |          |         |       |         |
-| **total**                                |             |          |         |       |         |
+| **_total_**                              |             |          |         |       |         |
 |                                          | instruction |   63%    |  48678  | 76753 | _28075_ |
 |                                          | branch      |   61%    |  2864   | 4628  | _1764_  |
 |                                          | line        |   61%    |  10819  | 17474 | _6655_  |
