@@ -2,15 +2,7 @@
 
 require 'nokogiri'
 
-def generate_report(out)
-  path_prefix = if ENV.has_key?('GITHUB_WORKSPACE')
-                  ENV['GITHUB_WORKSPACE'] + "/"
-                elsif Dir.exist?("/github/workspace")
-                  "/github/workspace/"
-                else
-                  ""
-                end
-
+def generate_report(path_prefix, out)
   Dir.glob("#{path_prefix}*/build/reports/jacoco/testCodeCoverageReport/testCodeCoverageReport.xml")
      .group_by {|name| name.slice(path_prefix.size..).split(%'/', 2).first}
      .each do |group, coverage_report|
@@ -29,7 +21,7 @@ def generate_report(out)
            .each {|report_node| print_section out, "_total_", report_node}
 
         out.puts
-      end
+     end
 end
 
 def print_section(out, name, node)
@@ -48,10 +40,19 @@ end
 
 # Main
 
+path_prefix = case
+              when ENV.has_key?('GITHUB_WORKSPACE')
+                ENV['GITHUB_WORKSPACE'] + "/"
+              when Dir.exist?("/github/workspace")
+                "/github/workspace/"
+              else
+                ""
+              end
+
 if ENV.has_key?"GITHUB_STEP_SUMMARY"
-  File.open(ENV["GITHUB_STEP_SUMMARY"], "a") do |f|
-    generate_report f
+  File.open(ENV["GITHUB_STEP_SUMMARY"], "a") do |out|
+    generate_report path_prefix, out
   end
 else
-  generate_report STDOUT
+  generate_report path_prefix, STDOUT
 end
