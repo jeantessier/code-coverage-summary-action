@@ -1,6 +1,8 @@
 require './entrypoint'
 
-describe "entrypoint" do
+describe ReportGenerator do
+  subject { ReportGenerator.new "" }
+
   let(:out) { spy("out") }
   let(:node) { double("node") }
 
@@ -12,7 +14,7 @@ describe "entrypoint" do
       allow(node).to receive(:[]).with(:type).and_return("abc")
 
       # When
-      print_counter(out, node)
+      subject.print_counter(out, node)
 
       # Then
       expect(out).to have_received(:puts).with("| | abc | 50% | 1 | 2 | _1_ |")
@@ -28,7 +30,7 @@ describe "entrypoint" do
       allow(node).to receive(:xpath).with("counter").and_return([])
 
       # When
-      print_section(out, name, node)
+      subject.print_section(out, name, node)
 
       # Then
       expect(out).to have_received(:puts).with("| **_default_** | | | | | |")
@@ -43,7 +45,7 @@ describe "entrypoint" do
       allow(node).to receive(:xpath).with("counter").and_return([])
 
       # When
-      print_section(out, name, node)
+      subject.print_section(out, name, node)
 
       # Then
       expect(out).to have_received(:puts).with("| **#{name}** | | | | | |")
@@ -62,7 +64,7 @@ describe "entrypoint" do
       allow(node).to receive(:xpath).with("counter").and_return([counter1, counter2])
 
       # When
-      print_section(out, name, node)
+      subject.print_section(out, name, node)
 
       # Then
       expect(out).to have_received(:puts).with("| **#{name}** | | | | | |")
