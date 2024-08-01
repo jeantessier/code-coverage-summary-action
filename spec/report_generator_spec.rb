@@ -1,7 +1,7 @@
 require './entrypoint'
 
 describe ReportGenerator do
-  subject { ReportGenerator.new "" }
+  subject { described_class.new "" }
 
   let(:out) { spy("out") }
   let(:node) { double("node") }
