@@ -8,7 +8,7 @@ class ReportGenerator
   end
 
   def generate_report(out)
-    Dir.glob("#{path_prefix}*/build/reports/jacoco/testCodeCoverageReport/testCodeCoverageReport.xml")
+    Dir.glob("#{path_prefix}**/testCodeCoverageReport.xml")
        .group_by {|name| name.slice(path_prefix.size..).split(%'/', 2).first}
        .each do |group, coverage_report|
       doc = File.open(coverage_report.first) {|f| Nokogiri::XML f}
