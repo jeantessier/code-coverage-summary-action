@@ -1,76 +1,76 @@
 require './lib/report_generator'
 
 describe ReportGenerator do
-  subject { described_class.new "" }
+  subject(:generator) { described_class.new '' }
 
-  let(:out) { spy("out") }
-  let(:node) { double("node") }
+  let(:out) { spy('out') }
+  let(:node) { double('node') }
 
-  context "print_counter" do
-    it "shows expected stats" do
+  describe 'print_counter' do
+    it 'shows expected stats' do
       # Given
       allow(node).to receive(:[]).with(:missed).and_return(1)
       allow(node).to receive(:[]).with(:covered).and_return(1)
-      allow(node).to receive(:[]).with(:type).and_return("abc")
+      allow(node).to receive(:[]).with(:type).and_return('abc')
 
       # When
-      subject.print_counter(out, node)
+      generator.print_counter(out, node)
 
       # Then
-      expect(out).to have_received(:puts).with("| | abc | 50% | 1 | 2 | _1_ |")
+      expect(out).to have_received(:puts).with('| | abc | 50% | 1 | 2 | _1_ |')
     end
   end
 
-  context "print_section" do
-    it "spells out default package if name is empty" do
+  describe 'print_section' do
+    it 'spells out default package if name is empty' do
       # Given
-      name = ""
+      name = ''
 
       # and
-      allow(node).to receive(:xpath).with("counter").and_return([])
+      allow(node).to receive(:xpath).with('counter').and_return([])
 
       # When
-      subject.print_section(out, name, node)
+      generator.print_section(out, name, node)
 
       # Then
-      expect(out).to have_received(:puts).with("| **_default_** | | | | | |")
-      expect(out).to have_received(:puts).with("| | | | | | |")
+      expect(out).to have_received(:puts).with('| **_default_** | | | | | |').ordered
+      expect(out).to have_received(:puts).with('| | | | | | |').ordered
     end
 
-    it "includes package name in the table header" do
+    it 'includes package name in the table header' do
       # Given
-      name = "some.package.name"
+      name = 'some.package.name'
 
       # and
-      allow(node).to receive(:xpath).with("counter").and_return([])
+      allow(node).to receive(:xpath).with('counter').and_return([])
 
       # When
-      subject.print_section(out, name, node)
+      generator.print_section(out, name, node)
 
       # Then
-      expect(out).to have_received(:puts).with("| **#{name}** | | | | | |")
-      expect(out).to have_received(:puts).with("| | | | | | |")
+      expect(out).to have_received(:puts).with("| **#{name}** | | | | | |").ordered
+      expect(out).to have_received(:puts).with('| | | | | | |').ordered
     end
 
-    it "includes one row per package" do
+    it 'includes one row per package' do
       # Given
-      name = "some.package.name"
-
-      #and
-      counter1 = {type: "abc", missed: 123, covered: 123}
-      counter2 = {type: "def", missed: 456, covered: 789}
+      name = 'some.package.name'
 
       # and
-      allow(node).to receive(:xpath).with("counter").and_return([counter1, counter2])
+      counter1 = { type: 'abc', missed: 123, covered: 123 }
+      counter2 = { type: 'def', missed: 456, covered: 789 }
+
+      # and
+      allow(node).to receive(:xpath).with('counter').and_return([counter1, counter2])
 
       # When
-      subject.print_section(out, name, node)
+      generator.print_section(out, name, node)
 
       # Then
-      expect(out).to have_received(:puts).with("| **#{name}** | | | | | |")
-      expect(out).to have_received(:puts).with("| | abc | 50% | 123 | 246 | _123_ |")
-      expect(out).to have_received(:puts).with("| | def | 63% | 789 | 1245 | _456_ |")
-      expect(out).to have_received(:puts).with("| | | | | | |")
+      expect(out).to have_received(:puts).with("| **#{name}** | | | | | |").ordered
+      expect(out).to have_received(:puts).with('| | abc | 50% | 123 | 246 | _123_ |').ordered
+      expect(out).to have_received(:puts).with('| | def | 63% | 789 | 1245 | _456_ |').ordered
+      expect(out).to have_received(:puts).with('| | | | | | |').ordered
     end
   end
 end
