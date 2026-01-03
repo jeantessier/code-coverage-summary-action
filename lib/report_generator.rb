@@ -11,22 +11,22 @@ class ReportGenerator
     Dir.glob("#{path_prefix}**/testCodeCoverageReport.xml")
        .group_by { |name| name.slice(path_prefix.size..).split(%(/), 2).first }
        .each do |group, coverage_report|
-      doc = File.open(coverage_report.first) { |f| Nokogiri::XML f }
+         doc = File.open(coverage_report.first) { |f| Nokogiri::XML f }
 
-      out.puts "### #{group}"
-      out.puts
-      out.puts '| Package | Type | Coverage | Covered | Total | Missed |'
-      out.puts '|---------|------|:--------:|:-------:|:-----:|:------:|'
+         out.puts "### #{group}"
+         out.puts
+         out.puts '| Package | Type | Coverage | Covered | Total | Missed |'
+         out.puts '|---------|------|:--------:|:-------:|:-----:|:------:|'
 
-      doc.xpath('//package')
-         .sort { |a, b| a[:name] <=> b[:name] }
-         .each { |package_node| print_section out, package_node[:name], package_node }
+         doc.xpath('//package')
+            .sort { |a, b| a[:name] <=> b[:name] }
+            .each { |package_node| print_section out, package_node[:name], package_node }
 
-      doc.xpath('report')
-         .each { |report_node| print_section out, '_total_', report_node }
+         doc.xpath('report')
+            .each { |report_node| print_section out, '_total_', report_node }
 
-      out.puts
-    end
+         out.puts
+       end
   end
 
   def print_section(out, name, node)
